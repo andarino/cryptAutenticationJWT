@@ -9,10 +9,15 @@ Email-me: tj.vinci97@gmail.com
 
 Connect with me at LinkedIn: www.linkedin.com/in/thiagorod/
 
-Also, you can use this Project as you wish, be for study, It's free!
+Also, you can use this Project as you wish, It's free!
 
 ## Interface
 
 - Login
 
 - User registration
+
+## Some Screens
+![Login](https://github.com/steniowagner/store-system/blob/master/img/login.png)
+
+![signup](https://github.com/steniowagner/store-system/blob/master/img/login.png)
