@@ -18,6 +18,6 @@ Also, you can use this Project as you wish, It's free!
 - User registration
 
 ## Some Screens
-![Login](https://github.com/steniowagner/store-system/blob/master/img/login.png)
+![Login](https://github.com/andarino/cryptAuthJWT/blob/main/img/authView.png)
 
-![signup](https://github.com/steniowagner/store-system/blob/master/img/login.png)
+![signup](https://github.com/andarino/cryptAuthJWT/blob/main/img/registerView.png)
