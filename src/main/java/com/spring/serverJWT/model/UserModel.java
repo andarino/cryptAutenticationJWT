@@ -9,12 +9,13 @@ import javax.persistence.Id;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
+@Data
+@NoArgsConstructor
 @Entity(name="userCrypt")
 public class UserModel {
-
-		
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private Integer id;

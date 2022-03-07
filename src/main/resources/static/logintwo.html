@@ -87,17 +87,45 @@
             }
         },
         methods: {
-            async getData() {
+            async getData(e) {
+            	e.preventDefault();
                 const data = {
                     email: this.email,
                     password: this.password
                 }
-
-                console.log(data);
-
-
-            }
-        }
+                
+                
+                const dataJson = JSON.stringify(data);
+                console.log(dataJson);
+                 const req = await fetch("http://localhost:8080/login", {
+                     method: "POST",
+                     headers: { "Content-Type": "application/json" },
+                     body: dataJson
+                 });
+                 
+				if(req.ok){
+					let jwtToken = await req.text();
+					//verificarToken(jwtToken);
+					console.log("requisitando com o token");
+	            	const request = await fetch("http://localhost:8080/redirecionar", {
+	                     method: "GET",
+	                     headers: { 
+	                    	 "Content-Type": "application/json",
+	                    	 "Authorization" : "Bearer "+ jwtToken
+	                    	 },
+	                    // body: dataJson
+	                 });
+	            	//let result = await request.json();
+	            	//console.log(result);
+					
+				}else{
+					alert("Please check if you email or password are correct!");
+				}
+                 
+            }//getData
+            
+          
+        }//methods
     });
 </script>
 

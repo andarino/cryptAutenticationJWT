@@ -78,6 +78,7 @@
                 lastName: null,
                 email: null,
                 password: null,
+                msgRetorno: null
                
             }
         },
@@ -94,14 +95,13 @@
                 }
                 const dataJson = JSON.stringify(data);
                 console.log(dataJson);
-                 const req = await fetch("http://localhost:8080/salvar", {
+                 const req = await fetch("http://localhost:8080/listarTodos", {
                      method: "POST",
                      headers: { "Content-Type": "application/json" },
                      body: dataJson
                  });
                 
-             //   const res = await req.json();
-
+               
                
 //                 setTimeout(() => this.msg = "", 3000);
 //  this.msg = "Cadastro realizado!";
