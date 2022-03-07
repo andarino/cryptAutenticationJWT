@@ -36,7 +36,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light" style="margin-bottom: 5%; background-color: #fff;">
             <div class="container-fluid" style="height: 5rem">
-                <a class="navbar-brand" href="#">view de autenticacao</a>
+                <a class="navbar-brand" href="#">authentication view</a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"></li>
@@ -48,7 +48,7 @@
 
     <section id="app">
 
-            <div class="card" style="margin: 0 auto; width: 30%; height: 50vh;">
+            <div class="card" style="margin: 0 auto; width: 30%; height: 60vh;">
                 <div class="card-body">
                     <p style="margin-bottom: 2.5rem;"> <strong >Log in</strong>
                     </p>
@@ -67,10 +67,14 @@
                                 </div>
                             </div>
                             <input type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;"
-                            value="Cadastrar!" />
+                            value="Login!" />
+                      <input type="button" class="btn btn-primary" onclick="location.href='/cadastro'" value="Create an user" 
+                      name="" style="width: 100%; margin-bottom: 1rem;" /> 
+            
                         </form>
                     </div>
                 </div>
+   
             </div>
 
     </section>
@@ -107,16 +111,20 @@
 					let jwtToken = await req.text();
 					//verificarToken(jwtToken);
 					console.log("requisitando com o token");
-	            	const request = await fetch("http://localhost:8080/redirecionar", {
+	            	const request = await fetch(`http://localhost:8080/registros/${this.email}`, {
 	                     method: "GET",
 	                     headers: { 
 	                    	 "Content-Type": "application/json",
 	                    	 "Authorization" : "Bearer "+ jwtToken
 	                    	 },
-	                    // body: dataJson
+	                    // body: JSON.stringify(email)
 	                 });
-	            	//let result = await request.json();
-	            	//console.log(result);
+	            	
+	            	const res = await request.json();
+	            	alert("usuario: "+ res.firstName+" "+res.lastName);
+	            	console.log("");
+//	            	console.log(req.lastName);
+	     
 					
 				}else{
 					alert("Please check if you email or password are correct!");

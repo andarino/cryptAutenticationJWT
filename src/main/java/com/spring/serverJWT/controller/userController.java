@@ -1,16 +1,18 @@
 package com.spring.serverJWT.controller;
 
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -37,6 +39,14 @@ public class userController {
 		mv.setViewName("logintwo.html");
 		return mv;
 }
+
+@RequestMapping(value = "/index", method = RequestMethod.GET)
+public ModelAndView index() {
+	ModelAndView mv = new ModelAndView("index.html");	
+	mv.setViewName("index.html");
+	return mv;
+}
+
 	
 @RequestMapping(value = "/cadastro", method = RequestMethod.GET)
 @ResponseBody
@@ -46,11 +56,10 @@ public ModelAndView cadastro() {
 	return mv;
 }
 
-@RequestMapping(value = "/redirecionar", method = RequestMethod.GET)
-public ModelAndView Loggedin() {
-	ModelAndView mv = new ModelAndView("index.html");	
-	mv.setViewName("index.html");
-	return mv;
+@GetMapping("/registros/{email}")
+@ResponseBody
+public UserModel getContaById(@PathVariable String email){
+	return repository.findByEmail(email).get();
 }
 
 	

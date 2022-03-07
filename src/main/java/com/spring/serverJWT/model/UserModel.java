@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -28,7 +30,9 @@ public class UserModel {
 		
 		@Column(unique= true)
 		private String email;
+		
 		@Column(name = "password")
+		@JsonProperty(access = JsonProperty.Access.WRITE_ONLY) 
 		private String password;
 
 		

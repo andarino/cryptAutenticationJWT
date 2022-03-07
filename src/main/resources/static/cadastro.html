@@ -58,7 +58,7 @@
                         </div>
 
                         <input type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;"
-                            value="Cadastrar!" />
+                            value="Continue" />
                     
                     </form>
                 </div>
@@ -95,7 +95,7 @@
                 }
                 const dataJson = JSON.stringify(data);
                 console.log(dataJson);
-                 const req = await fetch("http://localhost:8080/listarTodos", {
+                 const req = await fetch("http://localhost:8080/salvar", {
                      method: "POST",
                      headers: { "Content-Type": "application/json" },
                      body: dataJson
