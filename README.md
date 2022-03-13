@@ -1,5 +1,8 @@
 # cryptAuthenticationJWT
 JWT authentication system with password encryption.
+
+![d](https://https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white/static/v1?label=<LABEL>&message=<MESSAGE>&color=lightgreen)
+
 ## About this project
 This project is about an authentication system using json web token, the API is made using Spring Boot with postgres database connected to the view made in Vue.js.
  
