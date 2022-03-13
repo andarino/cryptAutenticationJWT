@@ -4,6 +4,8 @@ JWT authentication system with password encryption.
 ![postgres](https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white)
 ![spring](https://img.shields.io/badge/Spring-6DB33F?logo=spring&logoColor=white)
 ![vue](https://img.shields.io/badge/Vue.js-35495E?logo=vue.js&logoColor=4FC08D)
+![bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?logo=bootstrap&logoColor=white)
+
 ## About this project
 This project is about an authentication system using json web token, the API is made using Spring Boot with postgres database connected to the view made in Vue.js.
  
